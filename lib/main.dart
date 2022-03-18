@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'QuizBrain.dart';
-import 'package:flutter_phoenix/flutter_phoenix.dart';
+// import 'package:flutter_phoenix/flutter_phoenix.dart';
 
 void main() {
   runApp(MyApp());
@@ -50,8 +50,9 @@ class _quizState extends State<quiz> {
         title: Text('Finished!'),
         content: Text('You have reached the end of the quiz.'),
         actions: [
-          FlatButton(
-            color: Colors.blue,
+          TextButton(
+            style: TextButton.styleFrom(primary: Colors.blue),//ButtonStyle(backgroundColor: ),
+            // color:
             onPressed: () {
               setState(() {
                 scoreKeepr.clear();
@@ -102,13 +103,13 @@ class _quizState extends State<quiz> {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
-                child: FlatButton(
+                child: TextButton(
                   onPressed: () {
                     setState(() {
                       answer(true);
                     });
                   },
-                  color: Colors.green,
+                  style: TextButton.styleFrom(backgroundColor: Colors.green),
                   child: Text(
                     'True',
                     style: TextStyle(
@@ -121,7 +122,7 @@ class _quizState extends State<quiz> {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
-                child: FlatButton(
+                child: TextButton(
                   onPressed: () {
                     setState(
                       () {
@@ -129,7 +130,7 @@ class _quizState extends State<quiz> {
                       },
                     );
                   },
-                  color: Colors.red,
+                  style: TextButton.styleFrom(backgroundColor: Colors.red,),
                   child: Text(
                     'False',
                     style: TextStyle(
